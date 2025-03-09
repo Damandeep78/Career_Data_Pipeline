@@ -1,0 +1,136 @@
+version: "3.7"
+services:
+  postgres:
+    image: postgres:15
+    container_name: airflow_postgres
+    restart: always
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "5432:5432"
+    deploy:
+      resources:
+        limits:
+          cpus: "${DB_CPU_LIMIT}"
+          memory: "${DB_MEMORY_LIMIT}"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  webserver:
+    build:
+      context: .
+      args:
+        AIRFLOW_VERSION: ${AIRFLOW_VERSION}
+        PYTHON_VERSION: ${PYTHON_VERSION}
+    container_name: airflow_webserver
+    restart: always
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=CeleryExecutor
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres/${POSTGRES_DB}
+      - AIRFLOW__CELERY__RESULT_BACKEND=db+postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres/${POSTGRES_DB}
+      - AIRFLOW__CELERY__BROKER_URL=redis://redis:6379/0
+      - AIRFLOW_UID=${AIRFLOW_UID}
+      - AIRFLOW_GID=${AIRFLOW_GID}
+    ports:
+      - "8080:8080"
+    deploy:
+      resources:
+        limits:
+          cpus: "${WEB_CPU_LIMIT}"
+          memory: "${WEB_MEMORY_LIMIT}"
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+    command: ["webserver"]
+
+  scheduler:
+    build:
+      context: .
+      args:
+        AIRFLOW_VERSION: ${AIRFLOW_VERSION}
+        PYTHON_VERSION: ${PYTHON_VERSION}
+    container_name: airflow_scheduler
+    restart: always
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=CeleryExecutor
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres/${POSTGRES_DB}
+      - AIRFLOW__CELERY__RESULT_BACKEND=db+postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres/${POSTGRES_DB}
+      - AIRFLOW__CELERY__BROKER_URL=redis://redis:6379/0
+      - AIRFLOW_UID=${AIRFLOW_UID}
+      - AIRFLOW_GID=${AIRFLOW_GID}
+    deploy:
+      resources:
+        limits:
+          cpus: "${SCHEDULER_CPU_LIMIT}"
+          memory: "${SCHEDULER_MEMORY_LIMIT}"
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+    command: ["scheduler"]
+
+  worker:
+    build:
+      context: .
+      args:
+        AIRFLOW_VERSION: ${AIRFLOW_VERSION}
+        PYTHON_VERSION: ${PYTHON_VERSION}
+    container_name: airflow_worker
+    restart: always
+    depends_on:
+      - postgres
+      - scheduler
+    env_file:
+      - .env
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=CeleryExecutor
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres/${POSTGRES_DB}
+      - AIRFLOW__CELERY__RESULT_BACKEND=db+postgresql://${POSTRES_USER}:${POSTGRES_PASSWORD}@postgres/${POSTGRES_DB}
+      - AIRFLOW__CELERY__BROKER_URL=redis://redis:6379/0
+      - AIRFLOW_UID=${AIRFLOW_UID}
+      - AIRFLOW_GID=${AIRFLOW_GID}
+    deploy:
+      resources:
+        limits:
+          cpus: "${WORKER_CPU_LIMIT}"
+          memory: "${WORKER_MEMORY_LIMIT}"
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+    command: ["celery", "worker"]
+
+  redis:
+    image: redis:6
+    container_name: airflow_redis
+    restart: always
+    ports:
+      - "6379:6379"
+
+  airflow-init:
+    build:
+      context: .
+      args:
+        AIRFLOW_VERSION: ${AIRFLOW_VERSION}
+        PYTHON_VERSION: ${PYTHON_VERSION}
+    depends_on:
+      - postgres
+    environment:
+      AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+    command: db init
+
+volumes:
+  postgres_data:

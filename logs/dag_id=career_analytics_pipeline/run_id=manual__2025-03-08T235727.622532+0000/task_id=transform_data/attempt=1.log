@@ -1,0 +1,17 @@
+[2025-03-08T23:57:34.045+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-08T23:57:34.077+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: career_analytics_pipeline.transform_data manual__2025-03-08T23:57:27.622532+00:00 [queued]>
+[2025-03-08T23:57:34.092+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: career_analytics_pipeline.transform_data manual__2025-03-08T23:57:27.622532+00:00 [queued]>
+[2025-03-08T23:57:34.094+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2025-03-08T23:57:34.112+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): transform_data> on 2025-03-08 23:57:27.622532+00:00
+[2025-03-08T23:57:34.118+0000] {standard_task_runner.py:72} INFO - Started process 182 to run task
+[2025-03-08T23:57:34.126+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'career_analytics_pipeline', 'transform_data', 'manual__2025-03-08T23:57:27.622532+00:00', '--job-id', '38', '--raw', '--subdir', 'DAGS_FOLDER/Careers_Data_Pipeline.py', '--cfg-path', '/tmp/tmpfuaeiq1s']
+[2025-03-08T23:57:34.134+0000] {standard_task_runner.py:105} INFO - Job 38: Subtask transform_data
+[2025-03-08T23:57:34.236+0000] {task_command.py:467} INFO - Running <TaskInstance: career_analytics_pipeline.transform_data manual__2025-03-08T23:57:27.622532+00:00 [running]> on host b128859cb372
+[2025-03-08T23:57:34.781+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='career_analytics_pipeline' AIRFLOW_CTX_TASK_ID='transform_data' AIRFLOW_CTX_EXECUTION_DATE='2025-03-08T23:57:27.622532+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-03-08T23:57:27.622532+00:00'
+[2025-03-08T23:57:34.785+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-03-08T23:57:34.958+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-03-08T23:57:34.978+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-03-08T23:57:34.981+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=career_analytics_pipeline, task_id=transform_data, run_id=manual__2025-03-08T23:57:27.622532+00:00, execution_date=20250308T235727, start_date=20250308T235734, end_date=20250308T235734
+[2025-03-08T23:57:35.026+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-03-08T23:57:35.070+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-03-08T23:57:35.076+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
