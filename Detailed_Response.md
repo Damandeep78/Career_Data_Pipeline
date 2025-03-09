@@ -53,7 +53,7 @@
     * `DimEducations`: `education_id` (PK), `professional_id` (FK)
     * `FactJobs`: `job_id` (PK), `professional_id` (FK)
 
-### 4. Data Pipeline Approach and Assumptions:
+### 4. Data Pipeline Approach and Assumptions :
 
 * **Approach:**
     * Use Python (Pandas) for data transformation, validation, and cleaning.
