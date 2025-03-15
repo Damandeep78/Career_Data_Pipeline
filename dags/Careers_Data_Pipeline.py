@@ -154,7 +154,7 @@ def load_data_task(ti):
             if col in df.columns:
                 df[col] = pd.to_datetime(df[col], errors='coerce')
 
-    con = duckdb.connect(database='career_data.duckdb', read_only=False)
+    con = duckdb.connect('/opt/airflow/plugins/career_data.duckdb', read_only=False)
 
     con.register('professionals', professionals_df)
     con.register('jobs', jobs_df)
