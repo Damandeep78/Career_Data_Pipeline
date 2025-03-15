@@ -1,0 +1,34 @@
+[2025-03-15T03:06:47.859+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-15T03:06:47.882+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: career_analytics_pipeline.extract_data scheduled__2025-02-22T00:00:00+00:00 [queued]>
+[2025-03-15T03:06:47.895+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: career_analytics_pipeline.extract_data scheduled__2025-02-22T00:00:00+00:00 [queued]>
+[2025-03-15T03:06:47.901+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2025-03-15T03:06:48.455+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): extract_data> on 2025-02-22 00:00:00+00:00
+[2025-03-15T03:06:48.468+0000] {standard_task_runner.py:72} INFO - Started process 52 to run task
+[2025-03-15T03:06:48.533+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'career_analytics_pipeline', 'extract_data', 'scheduled__2025-02-22T00:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/Careers_Data_Pipeline.py', '--cfg-path', '/tmp/tmpj55aniui']
+[2025-03-15T03:06:48.551+0000] {standard_task_runner.py:105} INFO - Job 2: Subtask extract_data
+[2025-03-15T03:06:48.881+0000] {task_command.py:467} INFO - Running <TaskInstance: career_analytics_pipeline.extract_data scheduled__2025-02-22T00:00:00+00:00 [running]> on host a3a2c18cecd9
+[2025-03-15T03:06:49.097+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='career_analytics_pipeline' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2025-02-22T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-22T00:00:00+00:00'
+[2025-03-15T03:06:49.134+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-03-15T03:06:49.313+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-03-15T03:06:49.331+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-03-15T03:06:49.333+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=career_analytics_pipeline, task_id=extract_data, run_id=scheduled__2025-02-22T00:00:00+00:00, execution_date=20250222T000000, start_date=20250315T030647, end_date=20250315T030649
+[2025-03-15T03:06:49.393+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-03-15T03:06:49.438+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-03-15T03:06:49.444+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-03-15T03:09:25.618+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-15T03:09:25.644+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: career_analytics_pipeline.extract_data scheduled__2025-02-22T00:00:00+00:00 [queued]>
+[2025-03-15T03:09:25.659+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: career_analytics_pipeline.extract_data scheduled__2025-02-22T00:00:00+00:00 [queued]>
+[2025-03-15T03:09:25.661+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2025-03-15T03:09:25.691+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): extract_data> on 2025-02-22 00:00:00+00:00
+[2025-03-15T03:09:25.697+0000] {standard_task_runner.py:72} INFO - Started process 82 to run task
+[2025-03-15T03:09:25.703+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'career_analytics_pipeline', 'extract_data', 'scheduled__2025-02-22T00:00:00+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/Careers_Data_Pipeline.py', '--cfg-path', '/tmp/tmpusz5_p3c']
+[2025-03-15T03:09:25.708+0000] {standard_task_runner.py:105} INFO - Job 10: Subtask extract_data
+[2025-03-15T03:09:25.785+0000] {task_command.py:467} INFO - Running <TaskInstance: career_analytics_pipeline.extract_data scheduled__2025-02-22T00:00:00+00:00 [running]> on host a3a2c18cecd9
+[2025-03-15T03:09:26.077+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='career_analytics_pipeline' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2025-02-22T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-22T00:00:00+00:00'
+[2025-03-15T03:09:26.080+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-03-15T03:09:26.117+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-03-15T03:09:26.130+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-03-15T03:09:26.133+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=career_analytics_pipeline, task_id=extract_data, run_id=scheduled__2025-02-22T00:00:00+00:00, execution_date=20250222T000000, start_date=20250315T030925, end_date=20250315T030926
+[2025-03-15T03:09:26.162+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-03-15T03:09:26.195+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-03-15T03:09:26.199+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
