@@ -510,3 +510,31 @@
 [2025-03-15T03:25:56.727+0000] {logging_mixin.py:190} INFO - [2025-03-15T03:25:56.726+0000] {dag.py:3229} INFO - Sync 1 DAGs
 [2025-03-15T03:25:56.751+0000] {logging_mixin.py:190} INFO - [2025-03-15T03:25:56.751+0000] {dag.py:4156} INFO - Setting next_dagrun for career_analytics_pipeline to None, run_after=None
 [2025-03-15T03:25:56.789+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/Careers_Data_Pipeline.py took 0.642 seconds
+[2025-03-15T03:26:27.157+0000] {processor.py:186} INFO - Started process (PID=190) to work on /opt/airflow/dags/Careers_Data_Pipeline.py
+[2025-03-15T03:26:27.159+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/Careers_Data_Pipeline.py for tasks to queue
+[2025-03-15T03:26:27.163+0000] {logging_mixin.py:190} INFO - [2025-03-15T03:26:27.162+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/Careers_Data_Pipeline.py
+[2025-03-15T03:26:27.514+0000] {processor.py:925} INFO - DAG(s) 'career_analytics_pipeline' retrieved from /opt/airflow/dags/Careers_Data_Pipeline.py
+[2025-03-15T03:26:27.546+0000] {logging_mixin.py:190} INFO - [2025-03-15T03:26:27.546+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-03-15T03:26:27.571+0000] {logging_mixin.py:190} INFO - [2025-03-15T03:26:27.570+0000] {dag.py:4156} INFO - Setting next_dagrun for career_analytics_pipeline to None, run_after=None
+[2025-03-15T03:26:27.625+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/Careers_Data_Pipeline.py took 0.476 seconds
+[2025-03-15T03:26:58.032+0000] {processor.py:186} INFO - Started process (PID=192) to work on /opt/airflow/dags/Careers_Data_Pipeline.py
+[2025-03-15T03:26:58.033+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/Careers_Data_Pipeline.py for tasks to queue
+[2025-03-15T03:26:58.037+0000] {logging_mixin.py:190} INFO - [2025-03-15T03:26:58.036+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/Careers_Data_Pipeline.py
+[2025-03-15T03:26:58.412+0000] {processor.py:925} INFO - DAG(s) 'career_analytics_pipeline' retrieved from /opt/airflow/dags/Careers_Data_Pipeline.py
+[2025-03-15T03:26:58.444+0000] {logging_mixin.py:190} INFO - [2025-03-15T03:26:58.444+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-03-15T03:26:58.649+0000] {logging_mixin.py:190} INFO - [2025-03-15T03:26:58.649+0000] {dag.py:4156} INFO - Setting next_dagrun for career_analytics_pipeline to None, run_after=None
+[2025-03-15T03:26:58.671+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/Careers_Data_Pipeline.py took 0.650 seconds
+[2025-03-15T03:27:28.904+0000] {processor.py:186} INFO - Started process (PID=194) to work on /opt/airflow/dags/Careers_Data_Pipeline.py
+[2025-03-15T03:27:28.905+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/Careers_Data_Pipeline.py for tasks to queue
+[2025-03-15T03:27:28.909+0000] {logging_mixin.py:190} INFO - [2025-03-15T03:27:28.909+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/Careers_Data_Pipeline.py
+[2025-03-15T03:27:29.250+0000] {processor.py:925} INFO - DAG(s) 'career_analytics_pipeline' retrieved from /opt/airflow/dags/Careers_Data_Pipeline.py
+[2025-03-15T03:27:29.417+0000] {logging_mixin.py:190} INFO - [2025-03-15T03:27:29.416+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-03-15T03:27:29.445+0000] {logging_mixin.py:190} INFO - [2025-03-15T03:27:29.445+0000] {dag.py:4156} INFO - Setting next_dagrun for career_analytics_pipeline to None, run_after=None
+[2025-03-15T03:27:29.472+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/Careers_Data_Pipeline.py took 0.577 seconds
+[2025-03-15T03:27:59.869+0000] {processor.py:186} INFO - Started process (PID=196) to work on /opt/airflow/dags/Careers_Data_Pipeline.py
+[2025-03-15T03:27:59.871+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/Careers_Data_Pipeline.py for tasks to queue
+[2025-03-15T03:27:59.881+0000] {logging_mixin.py:190} INFO - [2025-03-15T03:27:59.880+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/Careers_Data_Pipeline.py
+[2025-03-15T03:28:00.297+0000] {processor.py:925} INFO - DAG(s) 'career_analytics_pipeline' retrieved from /opt/airflow/dags/Careers_Data_Pipeline.py
+[2025-03-15T03:28:00.332+0000] {logging_mixin.py:190} INFO - [2025-03-15T03:28:00.332+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2025-03-15T03:28:00.356+0000] {logging_mixin.py:190} INFO - [2025-03-15T03:28:00.356+0000] {dag.py:4156} INFO - Setting next_dagrun for career_analytics_pipeline to None, run_after=None
+[2025-03-15T03:28:00.392+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/Careers_Data_Pipeline.py took 0.536 seconds
